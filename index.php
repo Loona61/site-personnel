@@ -260,6 +260,8 @@ if(isset($_POST['submit'])){
             </ul>
         </nav>
 
+        <a href="#entete" class="cd-top">Top</a>
+        
         <footer>
             <p> DESIGN BY ROBERT, ROGER ET FILS </p>
         </footer>
@@ -296,6 +298,15 @@ if(isset($_POST['submit'])){
             init();
 
         })();
+        
+        $('a[href^="#"]').click(function(){
+	var the_id = $(this).attr("href");
+
+	$('html, body').animate({
+		scrollTop:$(the_id).offset().top
+	}, 'slow');
+	return false;
+});
     </script>
 </body>
 

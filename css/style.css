@@ -10,17 +10,22 @@
 
 html,
 body     {
-    background-image: url(../images/background.jpg );
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
     font-family: "BebasNeue";
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.7);
-    height: 100%;
     padding: 0px;
     margin: 0px;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(../images/background.jpg );
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #page     {
@@ -126,7 +131,6 @@ nav > input {
     flex-shrink: 0;
     text-align: center;
     margin: auto;
-    padding-bottom: 58px;
     position: relative;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -410,9 +414,54 @@ textarea {
     font-family: "MrRobot";
 }
 
+.txtform {
+    color:limegreen;
+}
+
+.cd-top {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  /* image replacement properties */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background: rgba(153, 0, 0, 0.5) url(http://codyhouse.co/demo/back-to-top/img/cd-top-arrow.svg) no-repeat center 50%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: .5;
+}
+
+.no-touch .cd-top:hover {
+  background-color: rgba(153, 0, 0, 1);
+  opacity: 1;
+}
+
+mark {
+    background-color: #fff;
+}
+
+
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< responsive >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 800px) {
     
     h1 {
         font-size: 38px;
@@ -420,6 +469,10 @@ textarea {
     
     #code {
         display:none;
+    }
+    
+    #navigation {
+        border-bottom: none;
     }
     
     #navigation label {
@@ -535,6 +588,13 @@ textarea {
   }
 }
 
+@media screen and (max-width: 1140px) {
+    
+    #about {
+        padding:4%;
+    }
+}
+
 /* orientation */
 
 @media (orientation: landscape) and (max-device-width: 767px) {
@@ -542,46 +602,6 @@ textarea {
   body {
     -webkit-text-size-adjust: 100%;
   }
-}
-
-.txtform {
-    color:limegreen;
-}
-
-.cd-top {
-  display: inline-block;
-  height: 40px;
-  width: 40px;
-  position: fixed;
-  bottom: 40px;
-  right: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  /* image replacement properties */
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
-  background: rgba(153, 0, 0, 0.5) url(http://codyhouse.co/demo/back-to-top/img/cd-top-arrow.svg) no-repeat center 50%;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.cd-top.cd-is-visible {
-  /* the button becomes visible */
-  visibility: visible;
-  opacity: 1;
-}
-
-.cd-top.cd-fade-out {
-  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
-  opacity: .5;
-}
-
-.no-touch .cd-top:hover {
-  background-color: rgba(153, 0, 0, 1);
-  opacity: 1;
 }
 
 @media only screen and (min-width: 768px) {

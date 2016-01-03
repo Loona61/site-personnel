@@ -60,14 +60,15 @@ if(isset($_POST['submit'])){
 <head>
     <title>Portfolio d'Aurelien CHEVALLIER</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link href='css/normalize.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css" type='text/css' />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.easy-pie-chart.js"></script>
-    <script type="text/javascript" src="js/fonction.js"></script>
     <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link rel="stylesheet" type="text/css" href="css/totoro.css" />
     <script src="js/snap.svg-min.js"></script>
     <!--[if IE]>
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -75,9 +76,9 @@ if(isset($_POST['submit'])){
 </head>
 
 <body>
+    <div class="background"></div>
     <div id="overlay"></div>
     <div id="page">
-
         <div id="entete">
             <nav id="navigation">
                 <input type="checkbox" id="toggle-nav" title="menu">
@@ -94,9 +95,13 @@ if(isset($_POST['submit'])){
             </nav>
 
             <div id="titre">
-                <h1 class="plus"><a href="index.html">Aurelien CHEVALLIER</a></h1>
+                <h1 class="plus"><a href="">Aurelien CHEVALLIER</a></h1>
                 00110000111001001111001 011100011100
                 <br /><p style="color:crimson; font-size:20px;">Developpeur Informatique</p>
+            </div>
+            
+            <div class="totoro-wrapper">
+                <div class="totoro"></div>
             </div>
 
         </div>
@@ -105,7 +110,7 @@ if(isset($_POST['submit'])){
             <h1>A propos de moi</h1>
             <br /> 
             <p>Comme vous l'aurez surement vu je m'appelle <mark>Aurélien CHEVALLIER</mark>, j'ai 28ans, et pratiquement devenu un BOT a force de baigner dans l'informatique.<br />
-            Ayant eu un ordinateur depuis que je suis jeune, avec une mere informaticienne, j'ai toujours été passionné par ce milieu, jusqu'au vouloir en faire mon metier.<br /><br /> 
+            Ayant eu un ordinateur depuis que je suis jeune, avec une mere informaticienne, j'ai toujours été passionné par ce milieu, jusqu'a vouloir en faire mon metier.<br /><br /> 
             Je me suis tourné vers l'administration réseau pendant mes études, aimant le coté construction et faire quelques choses de ces mains et aussi car c'est ce que je savais faire de mieux.
                 Apres avoir travaillé dans ce milieu en tant que <mark>Responsable informatique</mark> pour un Hopital local, je ne me voyais pas faire de la veille technologique toute ma vie et j'ai commencé m'amuser à <mark>automatiser mes taches</mark> mais aussi celle des employés en écrivant quelques programmes sous <mark>WINDEV</mark> et en <mark>développant des sites internets</mark>.<br /> <br /> 
                 J'aime le coté création, et le renouveau qu'apporte chaque projet en developpement. J'ai donc décidé de faire une <mark>formation</mark> pour changer de voie et m'orienter vers le developpement. Apres 6 mois de formation pour retrouver mes bases d'écoles et apprendre de nouveaux langages, j'ai vraiment envie de continuer dans ce domaine qui m'attire.<br /> <br /> 
@@ -247,67 +252,18 @@ if(isset($_POST['submit'])){
 
         <nav id="social">
             <ul>
-                <li><a href="https://twitter.com/"><span class="fa fa-twitter fa-lg"></span></a></li>
-                <li><a href="https://www.facebook.com/"><span class="fa fa-facebook fa-lg"></span></a></li>
-                <li><a href="http://instagram.com"><span class="fa fa-instagram fa-lg"></span></a></li>
-                <li><a href="http://youtube.com"><span class="fa fa-youtube fa-lg"></span></a></li>
-                <li><a href="http://vimeo.com"><span class="fa fa-vimeo fa-lg"></span></a></li>
-                <li><a href="http://amazon.com"><span class="fa fa-amazon fa-lg"></span></a></li>
-                <li><a href="http://itunes.com"><span class="fa fa-apple fa-lg"></span></a></li>
-                <li><a href="http://soundcloud.com"><span class="fa fa-soundcloud fa-lg"></span></a></li>
-                <li><a href="http://rdio.com"><span class="fa fa-dashcube fa-lg"></span></a></li>
-                <li><a href="http://spotify.com"><span class="fa fa-spotify fa-lg"></span></a></li>
+                <li><a href="https://twitter.com/DevAurelien"><span class="fa fa-twitter fa-lg"></span></a></li>
+                <li><a href="https://github.com/Loona61"><span class="fa fa-github fa-lg"></span></a></li>
             </ul>
         </nav>
 
         <a href="#entete" class="cd-top">Top</a>
         
         <footer>
-            <p> DESIGN BY ROBERT, ROGER ET FILS </p>
+            <p> DESIGN BY CHEVALLIER Aurelien </p>
         </footer>
     </div>
-    <script>
-        (function () {
-
-            function init() {
-                var speed = 250,
-                    easing = mina.easeinout;
-
-					[].slice.call(document.querySelectorAll('#grid > a')).forEach(function (el) {
-                    var s = Snap(el.querySelector('svg')),
-                        path = s.select('path'),
-                        pathConfig = {
-                            from: path.attr('d'),
-                            to: el.getAttribute('data-path-hover')
-                        };
-
-                    el.addEventListener('mouseenter', function () {
-                        path.animate({
-                            'path': pathConfig.to
-                        }, speed, easing);
-                    });
-
-                    el.addEventListener('mouseleave', function () {
-                        path.animate({
-                            'path': pathConfig.from
-                        }, speed, easing);
-                    });
-                });
-            }
-
-            init();
-
-        })();
-        
-        $('a[href^="#"]').click(function(){
-	var the_id = $(this).attr("href");
-
-	$('html, body').animate({
-		scrollTop:$(the_id).offset().top
-	}, 'slow');
-	return false;
-});
-    </script>
+    <script type="text/javascript" src="js/fonction.js"></script>
 </body>
 
 </html>
